@@ -19,7 +19,7 @@ app.use(async (ctx) => {
   ctx.type = 'text/html';
   ctx.body = htmlFile;
 })
-var PORT = parseInt(8080)
+var PORT = parseInt(8080);
 
 app.listen(PORT, function () {
   console.log('Node app is running, port:', PORT, '\n\n\n');

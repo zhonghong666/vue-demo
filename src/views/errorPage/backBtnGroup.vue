@@ -1,7 +1,7 @@
 <template>
   <div>
-    <a-button size="large" type="text" @click="backHome" style="margin-right: 16px;">返回首页</a-button>
-    <a-button size="large" type="text" @click="backPrev">返回上一页({{ second }}s)</a-button>
+    <el-button size="large" type="text" @click="backHome" style="margin-right: 16px;">返回首页</el-button>
+    <el-button size="large" type="text" @click="backPrev">返回上一页({{ second }}s)</el-button>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   name: 'backBtnGroup',
   data() {
     return {
-      second: 105,
+      second: 20,
       timer: null
     }
   },

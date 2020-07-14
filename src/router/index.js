@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/views/home/index.vue';
+import Vue from 'vue';
+import Router from 'vue-router';
 
 Vue.use(Router)
 const router = new Router({
+  mode: 'hash',
   routes: [
     {
       path: '/',
@@ -12,7 +12,12 @@ const router = new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: () => import('@/views/home')
+    },
+    {
+      path: '/404',
+      name: 'error_404',
+      component: () => import('@/views/errorPage/404')
     }
   ]
 })
