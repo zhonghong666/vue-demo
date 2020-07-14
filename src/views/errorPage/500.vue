@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import error404 from '@/assets/img/error-page/error-500.svg'
-import errorContent from './error-content.vue'
+import error404 from '@/assets/img/errorPage/500.svg'
+import errorContent from './errorContent.vue'
 export default {
   name: 'error_500',
   components: {

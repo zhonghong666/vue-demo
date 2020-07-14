@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import error401 from '@/assets/img/error-page/error-401.svg'
+import error401 from '@/assets/img/errorPage/401.svg'
 import errorContent from './error-content.vue'
 export default {
   name: 'error_401',

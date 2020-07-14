@@ -13,9 +13,9 @@
 
 <script>
 import './error.less'
-import backBtnGroup from './back-btn-group.vue'
+import backBtnGroup from './backBtnGroup.vue'
 export default {
-  name: 'error_content',
+  name: 'errorContent',
   components: {
     backBtnGroup
   },
