@@ -4,6 +4,7 @@
     <h1>Hello Vue!</h1>
     <button @click="inc">Clicked {{ count }} times.</button>
     <br />
+    <br />
     <el-row>
       <el-button>默认按钮</el-button>
       <el-button type="primary">主要按钮</el-button>
@@ -36,9 +37,6 @@ export default {
 html, body {
   margin: 0;
   padding: 0;
-}
-img {
-  width: 100vw;
 }
 h1 {
   font-family: Arial, Helvetica, sans-serif;
