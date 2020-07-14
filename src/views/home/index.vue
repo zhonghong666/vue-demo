@@ -1,8 +1,17 @@
 <template>
   <div>
     <img src="@/assets/logo.png">
-    <h1>Hello Vue 3!</h1>
+    <h1>Hello Vue!</h1>
     <button @click="inc">Clicked {{ count }} times.</button>
+    <br />
+    <el-row>
+      <el-button>默认按钮</el-button>
+      <el-button type="primary">主要按钮</el-button>
+      <el-button type="success">成功按钮</el-button>
+      <el-button type="info">信息按钮</el-button>
+      <el-button type="warning">警告按钮</el-button>
+      <el-button type="danger">危险按钮</el-button>
+    </el-row>
   </div>
 </template>
 
@@ -24,8 +33,12 @@ export default {
 </script>
 
 <style scoped>
+html, body {
+  margin: 0;
+  padding: 0;
+}
 img {
-  width: 200px;
+  width: 100vw;
 }
 h1 {
   font-family: Arial, Helvetica, sans-serif;
