@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <img src="@/assets/logo.png">
     <h1>Hello Vue!</h1>
     <button @click="inc">Clicked {{ count }} times.</button>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-
+import {getHome} from '@/api/home/home.js';
 export default {
   name: 'Home',
   data() {
@@ -28,17 +28,21 @@ export default {
   methods: {
     inc: function() {
       this.count += 1;
+      getHome({bookId: 179779}).then((data) => {
+        this.$message({
+          message: JSON.stringify(data),
+          type: 'warning'
+        });
+      }).catch((err) => {
+        this.$message.error(err.message);
+      });
     }
   }
 }
 </script>
 
 <style scoped>
-html, body {
-  margin: 0;
-  padding: 0;
-}
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
+.container {
+  text-align: center;
 }
 </style>

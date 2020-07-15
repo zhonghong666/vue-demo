@@ -3,9 +3,9 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i;
 
 const resolve = dir => {
-  return path.join(__dirname, dir)
+  return path.join(__dirname, dir);
 }
-const env = process.env.NODE_ENV
+const env = process.env.NODE_ENV;
 
 // 项目部署基础
 // 默认情况下，我们假设你的应用将被部署在域的根目录下,
@@ -14,8 +14,19 @@ const BASE_URL = process.env.BASE_URL // 生产环境下本地调试时使用'/'
 
 const config = {
   devServer: {
-    port: 8081,
-    hot: true
+    host: 'localhost',
+    port: 8080,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8083',
+        ws: true,
+        changeOrigin: true,
+        // secure: false,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
   },
   publicPath: BASE_URL,
   assetsDir: './', // 静态资源目录

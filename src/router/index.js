@@ -12,12 +12,22 @@ const router = new Router({
     {
       path: '/home',
       name: 'Home',
-      component: () => import('@/views/home')
+      component: () => import('@/views/home/index.vue')
     },
     {
-      path: '/404',
+      path: '/500',
+      name: 'error_500',
+      component: () => import('@/views/errorPage/500.vue')
+    },
+    {
+      path: '/401',
+      name: 'error_401',
+      component: () => import('@/views/errorPage/401.vue')
+    },
+    {
+      path: '*',
       name: 'error_404',
-      component: () => import('@/views/errorPage/404')
+      component: () => import('@/views/errorPage/404.vue')
     }
   ]
 })

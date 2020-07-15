@@ -74,7 +74,7 @@ import {
   // Transfer,
   // Footer,
   // MessageBox,
-  // Message,
+  Message,
   // Notification
 } from 'element-ui';
 
@@ -150,7 +150,7 @@ Vue.use(Row);
 // Vue.prototype.$msgbox = MessageBox;
 // Vue.prototype.$alert = MessageBox.alert;
 // Vue.prototype.$confirm = MessageBox.confirm;
-// Vue.prototype.$message = Message;
+Vue.prototype.$message = Message;
 
 Vue.prototype.$ELEMENT = {
   size: 'medium', // 组件大小

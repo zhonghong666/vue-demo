@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button size="large" type="text" @click="backHome" style="margin-right: 16px;">返回首页</el-button>
+    <el-button size="large" type="text" @click="backHome" >返回首页</el-button>
     <el-button size="large" type="text" @click="backPrev">返回上一页({{ second }}s)</el-button>
   </div>
 </template>
