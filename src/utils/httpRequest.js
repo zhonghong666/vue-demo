@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import config from '@/config/index.js';
+import config from '@/config/config.js';
 import {Message} from 'element-ui';
 
 // const baseURL = config.baseUrl[process.env.VUE_APP_ENV];

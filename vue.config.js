@@ -14,14 +14,12 @@ const BASE_URL = process.env.BASE_URL // 生产环境下本地调试时使用'/'
 
 const config = {
   devServer: {
-    host: 'localhost',
-    port: 8080,
     proxy: {
       '/api': {
-        target: 'http://localhost:8083',
+        target: 'http://localhost:8083', // 代理域名 + 端口
         ws: true,
         changeOrigin: true,
-        // secure: false,
+        secure: false,
         pathRewrite: {
           '^/api': ''
         }
@@ -33,16 +31,8 @@ const config = {
   configureWebpack: config => {
 
     if (env === 'production') {
-      config.resolve = {
-        alias: {
-          '@ant-design/icons/lib/dist$': resolve('./src/core/antd/icons.js'),
-          '@': resolve('src')
-        }
-      }
       config.externals = {
-        'jquery': '$',
-        'g2': 'G2',
-        'data-set': 'DataSet',
+        
       }
       // Begin 生成 gzip 压缩文件
       config.plugins.push(
@@ -105,10 +95,10 @@ const config = {
       }
     }
   },
-  // 打包时不生成.map文件
+  // 打包时是否生成.map文件
   productionSourceMap: false,
-  // 关闭ESLINT
-  lintOnSave: false
+  // 是否开启ESLINT
+  lintOnSave: true
 }
 
 module.exports = config
